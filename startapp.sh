@@ -1,10 +1,13 @@
+echo "stopping all containers"
 docker kill $(docker ps -q)
+echo "removing all containers"
 docker rm $(docker ps -a -q)
+echo "removing all containers images"
 docker rmi $(docker images -q)
 
 
-
-BROWSER_PORT=5001
+HOST='localhost'
+BROWSER_PORT=5019
 # Define Docker port number that gave in Dockerfile
 DOC_PORT=5000
 # Define a Docker container name randomly
@@ -19,3 +22,6 @@ docker run \
 	--detach \
 	--name $DOC_CONT_NAME \
 	$DOC_IMG_NAME
+
+
+echo "View the output: localhost:5001"

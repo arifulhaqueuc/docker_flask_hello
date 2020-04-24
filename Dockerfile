@@ -12,7 +12,7 @@ RUN pip install --no-cache-dir -r req.txt
 
 # Inform Docker that the container is listening on the 
 # specified port at runtime.
-EXPOSE 8080
+# EXPOSE 8080
 
 
 # Copy the rest of your app's source code from your host to 
